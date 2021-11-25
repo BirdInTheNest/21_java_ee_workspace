@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/event.css">
+</head>
+<body>
+<h1>속성 제어</h1>
+<p>클릭하세요.</p>
+<img src="../img/1.gif" width="600" height="300" alt="투슬리스1" />
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var index = 1;
+	
+	$('img').click(function(){
+		index = (index % 5) + 1; //1~5 순서대로 나온다
+		
+		//$('img').attr('src', '../img/'+index+'.gif');
+		$(this).attr('src', '../img/'+index+'.gif');
+	});
+});
+</script>
+</body>
+</html>

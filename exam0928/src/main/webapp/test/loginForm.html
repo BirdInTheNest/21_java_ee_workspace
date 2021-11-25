@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="writeForm.css">
+</head>
+<body>
+<h1>Login</h1>
+<form name="writeForm" method="post" action="">
+	<table>
+		<tr>
+			<td>E-mail *</td>
+			<td>
+				<input type="text" name="email" id="email">
+				<div id="emailDiv"></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Password *</td>
+			<td>
+				<input type="password" name="pwd" id="pwd">
+				<div id="pwdDiv"></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2" align="center">
+				<input type="button" id="writeBtn" value="Create an account" onclick="loginAccount()">
+			</td>
+		</tr>
+	</table>
+</form>
+
+<script type="text/javascript" src="../js/member.js"></script>
+</body>
+</html>

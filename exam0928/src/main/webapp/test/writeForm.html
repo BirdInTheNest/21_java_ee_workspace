@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="writeForm.css">
+</head>
+<body>
+<h1>Register</h1>
+<p>
+	Register with Fortnum's, and make shopping with us easier and quicker.
+</p><br>
+<ul>
+	<li>Access your bag across devices</li>
+	<li>View your order history</li>
+	<li>Create and store your most-used addresses</li>
+</ul><br>
+
+<form name="writeForm" method="post" action="">
+	<table>
+		<tr>
+			<td>Email address *</td>
+			<td>
+				<input type="text" name="email" id="email">
+				<div id="emailDiv"></div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="name">First name *</td>
+			<td>
+				<input type="text" name="firstName" id="firstName">
+				<div id="firstNameDiv"></div>
+			</td>
+		</tr>
+		
+		<tr>	
+			<td id="name">Last name *</td>
+			<td>
+				<input type="text" name="lastName" id="lastName">
+				<div id="lastNameDiv"></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Password *</td>
+			<td>
+				<input type="password" name="pwd" id="pwd">
+				<div id="pwdDiv"></div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Repeat Password *</td>
+			<td>
+				<input type="password" name="repwd" id="repwd">
+				<div id="repwdDiv"></div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2" align="center">
+				<input type="button" id="writeBtn" value="Create an account" onclick="createAccount()">
+			</td>
+		</tr>
+	</table>
+</form>
+
+<script type="text/javascript" src="../js/member.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

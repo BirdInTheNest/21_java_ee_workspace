@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function insertQuestion(){
+		var input = prompt("사칙연산의 수식을 입력하세요. (예: 100+50)", ""); //"100+50"
+		
+		//문자열을 수식으로 변환
+		var answer = eval(input); //100+50 -> 150
+		
+		document.getElementById("question").innerText=input + " = " + answer;
+	}
+</script>
+</head>
+<body onload="insertQuestion()">
+	<h1 id="question"></h1>
+</body>
+</html>
+
+<!-- 
+<body onload="insertQuestion()"> 에서 
+body영역을 다 읽고나서 insertQuestion() 자바스크립트 안에 있는 이 함수 호출
+
+innerText / innerHTML
+그냥 텍스트값만 나오게 할 때는 innerText로, 폰트 속성 등을 주고 싶을 때는 innerHTML로
+ -->

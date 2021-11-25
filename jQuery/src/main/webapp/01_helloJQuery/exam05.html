@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div#container {
+	width: auto; /* 창 크기 가운데로 정렬 */
+	border: 5px solid #ff00ff;
+	padding: 10px;
+}
+div#container > h1#title {
+	background-color: #d5d5d5;
+	padding: 10px;
+}
+div#container div.box {
+	padding: 10px;
+	background-color: #ffff00;
+	font: 20px '굴림';
+}
+div#container > ul {
+	list-style: none;
+	padding: 10px;
+	margin: 0px;
+	width: auto;
+	border: 5px solid #00ff00;
+}
+div#container > ul > li:first-child, div#container > ul > li:last-child {
+	border: 3px dotted red;
+	padding: 3px 10px;
+}
+pre {
+	font: 14px/130% 'Courier New'; /* 글자 크기/줄 간격 */
+	background: #eee;
+	padding: 10px 20px;
+	margin: 10px auto;
+	border: 1px solid #555;
+	border-radius: 20px; /* top right bottom left */
+}
+</style>
+</head>
+<body>
+<div id="container">
+	<h1 id="title"></h1>
+	<div class="box"></div>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+<p></p>
+<pre></pre>
+<pre name="source"></pre>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#title').html('두번째 제목'); /* 아이디 속성으로 직접 접근 */
+	$('div#container > h1#title').html('제목입니다.'); /* 자식 셀렉터로 접근 */
+	$('div#container div.box').html('안녕하세요'); /* 후손 셀렉터로 접근 */
+	
+	$('ul li').html('목록입니다');
+	$('ul li:eq(1)').html('jQuery 고유의 방식도 있다'); //eq() 0부터 시작
+	$('p, pre').html('다중요소 선택');
+	
+	$('pre[name=source]').html('CSS2의 선택자');
+	$('ul li:first-child').html("First-child");
+	$('ul li:last-child').html("Last-child");
+	
+	
+});
+</script>
+</body>
+</html>
+
+<!-- 
+$(); 제이쿼리 객체로 바꾸겠습니다.
+
+$(function(){  코드가 들어가야 합니다. 
+	
+});
+
+
+nth-child는 그 순서의 모든 오브젝트를 선택하고
+eq는 딱 하나의 오브젝트만을 선택합니다.
+
+
+
+
+
+
+: eq ()
+
+일치하는 세트 내에서 인덱스 n의 요소를 선택하십시오.
+
+인덱스 관련 선택기 (: eq (), : lt (), : gt (), : even, : odd)는 
+앞에 오는 표현식과 일치하는 요소 세트를 필터링합니다. 
+일치하는 세트 내의 요소 순서에 따라 세트를 좁 힙니다. 
+예를 들어, 클래스 선택기 (.myclass)를 사용하여 요소를 먼저 선택하고 4 개의 요소가 리턴되면 
+이러한 선택기의 목적으로 이러한 요소에 0-3의 색인이 제공됩니다.
+
+: n 번째 자식 ()
+
+부모의 n 번째 자식 인 모든 요소를 ​​선택합니다.
+
+JQuery의 : nth-child (n) 구현은 CSS 사양에서 엄격하게 파생되므로 
+n의 값은 "1-indexed"입니다. 즉, 계산은 1부터 시작합니다. 
+다른 모든 선택기 식의 경우 jQuery는 JavaScript의 " 0- 인덱싱 "계산. 
+따라서 두 개의 <li>를 포함하는 단일 항목이 있으면
+$('li:nth-child(1)')은 첫 번째 <li>를 선택하고 $('li:eq(1)')은 두 번째를 선택합니다.
+
+: nth-child (n) 의사 클래스는 두 요소가 일치하는 요소가 크게 다르더라도 
+: eq (n)과 쉽게 혼동됩니다. 
+: nth-child (n)을 사용하면 모든 하위 항목에 관계없이 모든 하위 항목이 계산되며 
+지정된 요소는 의사 클래스에 연결된 선택기와 일치하는 경우에만 선택됩니다. 
+: eq (n)을 사용하면 의사 클래스에 연결된 선택기 만 계산되며 
+다른 요소의 하위 항목으로 제한되지 않으며 (n + 1) 번째 항목 (n은 0 기반)이 선택됩니다.
+
+: nth-child (an + b) 의사 클래스 표기법은 문서 트리에서 양수 또는 0의 n 값에 대해 
++ b-1 형제가 있고 부모 요소를 갖는 요소를 나타냅니다. 
+a와 b의 값이 0보다 큰 경우 요소의 자식을 요소 그룹 (마지막 그룹이 나머지를 취하는)으로 
+효과적으로 나누고 각 그룹의 b 번째 요소를 선택합니다. 
+예를 들어, 이렇게하면 선택자가 테이블의 다른 모든 행을 처리 할 수 ​​있으며 
+4주기마다 단락 텍스트의 색을 번갈아 사용할 수 있습니다. 
+a 및 b 값은 정수 여야합니다 (양수, 음수 또는 0). 요소의 첫 번째 자식의 인덱스는 1입니다.
+
+이 외에도 : nth-child ()는 대신 'odd'와 'even'을 인수로 사용할 수 있습니다. 
+‘홀수’는 2n + 1과 같은 의미이고‘짝수’는 2n과 같은 의미입니다.
+
+ 
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

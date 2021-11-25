@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+h3, li {
+	color: brown;
+}
+div > div > strong { /* 자식 셀렉터 */
+	background: yellow;
+}
+ul strong { /* 후손 셀렉터 */
+	color: dodgerblue;
+}
+.warning {
+	color: red;
+}
+body.main {
+	background: aliceblue;
+}
+#list {
+	background: mistyrose;
+}
+#list span { /* 후손 셀렉터 */
+	color: forestgreen;
+}
+h3:first-letter { /* 가상 클래스 - 첫 번째 문자를 선택 */
+	color: red;
+	font-size: 25px;
+}
+li:hover { /* 가상 클래스 */
+	background: yellowgreen;
+}
+::selection { /* 가상 클래스, 마우스를 드래그하면 글자색은 빨강, 바탕색은 노랑으로 변한다 */
+	color: red;
+	background: yellow;
+}
+</style>
+</head>
+<body class="main">
+	<h3>Web Programming</h3>
+	<hr/>
+	<div>
+		<div>2학기 <strong>학습 내용</strong>입니다.</div>
+		<ul id="list">
+			<li><span>HTML5</span></li>
+			<li><strong>CSS</strong></li>
+			<li>JAVASCRIPT</li>
+		</ul>
+		<div class="warning">60점 이하는 F</div>
+	</div>
+</body>
+</html>
+
+<!-- 
+h3, li {
+	color: brown;
+}
+
+태그 2개에 모두 적용하라
+
+-----------------------
+
+자손은 중간에 건너뛰면 안됨
+ -->

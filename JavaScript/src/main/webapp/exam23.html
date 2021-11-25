@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- a태그에서 onclick이 있을 경우에는 onclick을 먼저 수행하고 href 로 이동한다 -->
+<a href="http://www.naver.com" onclick="alert('hi');">TEST1</a>
+
+<!-- onclick에서 return false;가 있을 경우 href로 이동하지 않는다 -->
+<a href="http://www.naver.com" onclick="alert('hi'); return false;">TEST2</a>
+
+<a href="#" onclick="alert('hi');">TEST3</a>
+
+</body>
+</html>
+
+<!-- 
+문자열 분리가 일어나므로 "" 안에는 '', '' 안에는 ""
+ -->

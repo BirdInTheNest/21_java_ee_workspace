@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<style type="text/css">
+div {
+	color: red;
+	font-size: 8pt;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+<form name="writeForm" method="post" action="http://localhost:8080/memberServlet/WriteServlet">
+	<table border="1" cellspacing="0" cellpadding="5">
+		<tr>
+			<td width="100" align="center">이름</td>
+			<td>
+				<input type="text" name="name" id="name" placeholder="이름 입력">
+				<div id= "nameDiv"></div>
+			</td>	
+		</tr>
+		
+		<tr>
+			<td width="100" align="center">아이디</td>
+			<td>
+				<input type="text" name="id" id="id" placeholder="아이디 입력">
+				<input type="button" value="중복체크" onclick="javascript:checkId()">
+				<div id= "idDiv"></div>
+			</td>	
+		</tr>
+		
+		<tr>
+			<td width="100" align="center">비밀번호</td>
+			<td>
+				<input type="password" name="pwd" id="pwd" size="30" placeholder="비밀번호 입력">
+				<div id= "pwdDiv"></div>
+			</td>	
+		</tr>
+		
+		<tr>
+			<td width="100" align="center">재확인</td>
+			<td>
+				<input type="password" name="repwd" id="repwd" size="30" placeholder="비밀번호 입력">
+				<div id= "repwdDiv"></div>
+			</td>	
+		</tr>
+		
+		<tr>
+			<td width="100" align="center">성별</td>
+			<td>
+				<input type="radio" name="gender" value="0" checked>남
+				<input type="radio" name="gender" value="1">여
+			</td>
+		</tr>
+		
+		<tr>
+			<td width="100" align="center">이메일</td>
+			<td>
+				<input type="text" name="email1">
+				@
+				<input type="text" name="email2" list="email2" placeholder="직접입력">
+				<datalist id="email2">
+					<option value="naver.com">naver.com
+					<option value="daum.net">daum.net
+					<option value="gmail.com">gmail.com
+				</datalist>
+			</td>
+		</tr>
+		
+		<tr>
+			<td width="100" align="center">핸드폰</td>
+			<td>
+				<select name="tel1" style="width: 70px;">
+					<option value="010" selected>010</option>
+					<option value="011" >011</option>
+					<option value="019" >019</option>
+				</select>
+				-
+				<input type="text" name="tel2" size="6" maxlength="4">
+				-
+				<input type="text" name="tel3" size="6" maxlength="4">
+			</td>
+		</tr>
+		
+		<tr>
+			<td width="100" align="center">주소</td>
+			<td>
+				<input type="text" name="zipcode" id="zipcode" readonly>
+				<input type="button" value="우편번호 검색" onclick="execDaumPostcode()"><br>
+				<input type="text" name="addr1" id="addr1" size="60" placeholder="주소" readonly><br>
+				<input type="text" name="addr2" id="addr2" size="60" placeholder="상세주소">
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2" align="center">
+				<input type="button" id="writeBtn" value="회원가입" onclick="checkWrite()">
+				<input type="reset" value="다시작성">
+			</td>
+		</tr>
+	</table>
+</form>
+
+<!-- <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script> -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- daum 우편번호 api -->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+<script type="text/javascript" src="http://localhost:8080/memberServlet/js/member.js"></script>
+
+</body>
+</html>
+
+<!-- 
+<form name="writeForm" method="post">
+post방식은 폼에서 포스트방식으로 요청할 때만 사용 가능합니다.
+설정하지 않으면 기본적으로 get방식이 됩니다.
+
+서비스 방식은 post방식으로 설정하여 이동되는 데이터가 안 보이도록 합니다.
+회원가입 버튼은 button으로 만들어서 유효성 검사하고, 그 다음 submit 합니다.
+
+
+클라이언트			======== post 요청 ========> 서버
+writeForm.html					 			WriteServlet.java
+											1. 데이터
+											1. DB 저장
+											3. 응답 (회원가입 성공/실패)
+
+JDBC
+1. driver loading
+	- ojdbc8.jar
+2. Connection
+	- URL, USERNAME, PASSWORD
+3. PreparedStatement
+	- SQL(CRUD)
+											
+-------------------------------------
+다음 3가지의 변수명은 똑같아야 합니다.
+
+1. 클라이언트 입력창의 name 속성 이름(name="")
+2. DB 테이블의 컬럼명
+3. ~DTO.java의 필드명
+
+-------------------------------------
+우편번호
+
+1. daum
+
+2. 우편번호 테이블 만들고 / 사이트 우편번호 데이터 가져오기
+
+-------------------------------------------
+disabled - 비활성화, 무시
+disabled 는 데이터를 가져오지 않기 때문에 사용하지 않습니다.
+대신 readonly를 사용합니다. 
+
+readonly - 읽기 전용
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

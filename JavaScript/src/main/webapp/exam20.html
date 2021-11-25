@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="calc.js"></script>
+<script type="text/javascript">
+	document.write("<h3>calc</h3>");
+	calc.setValue(42, 36);
+	calc.result();
+	
+	calc.setValue(72, 85);
+	document.write("덧셈 = " + calc.plus() + "<br>");
+	document.write("뺄셈 = " + calc.minus() + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+<!-- 
+객체
+변수와 함수의 집합 
+- Javascript는 Prototype 기반의 객체지향언어이다.
+  => 객체를 원형(prototype) 형태로 생성하고, 
+  그 안에 기능을 위한 함수나 변수를 추가하는 방법으로 그룹화 하는 개념
+  => 객체는 자주 사용하게 될 기능들을 묶어서 외부의 스크립트 파일(*.js)로 분리해 내는 용도로 주로 사용한다.
+     이렇게 만든 스크립트 파일은 여러개의 HTML파일에 의해서 참조하여 재사용할 수 있다.
+     
+----------------------------------------------------------
+자바에서는 클래스 선언하고 new해서 객체 생성
+
+class Test {
+	private int x=0; //필드
+	private int y=0; //필드
+	
+	public void setValue(int x, int y){ //메소드
+		this.x = x;
+		this.y = y;
+	} 
+	
+	public void plus(){ //메소드
+		return x+y;
+	} 
+	
+	public void minus(){ //메소드
+		return x-y;
+	} 
+	
+	public void reslt(){ //메소드
+		var value1 = plus()함수 호출
+		var value2 = minus()함수 호출
+		System.out.println("덧셈 = " + value1);
+		System.out.println("뺄셈 = " + value2);
+	}
+}
+
+TestMain.java
+public class TestMain {
+	public static void main(~~~){
+		Test t = new Test();
+	}
+}		
+	
+     
+ -->

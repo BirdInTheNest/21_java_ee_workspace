@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/event.css">
+</head>
+<body>
+<h1>활성/비활성 구현하기</h1>
+<form name="form1">
+   <input type="checkbox" id="upload_file_check" value="Y" />
+   <input type="file" id="file_finder" disabled />
+</form>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#upload_file_check').change(function(){
+		var is_check = $(this).is(':checked'); //체크박스가 선택되었는지 true false
+		
+		$('#file_finder').prop('disabled', !is_check); //체크되면 활성화, 해제되면 비활성화
+	});
+});
+</script>
+</body>
+</html>

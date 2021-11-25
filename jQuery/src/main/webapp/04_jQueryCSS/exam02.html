@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+fieldset { 
+   width: 270px;
+   height: 100px;
+}
+
+input {
+   border: 1px solid #ccc;
+   width: 240px;
+   height: 25px;
+   padding: 3px 10px 3px 10px;
+   margin: 5px 10px;
+   background-image: url(../img/input.png);
+   background-repeat: no-repeat;
+}
+
+input#id { 
+   background-position: 10px –3px; 
+   /* 이미지의 왼쪽 상단 지점을 기준으로 x 가로위치 y 세로 위치 떨어져서 위치 */
+}
+
+input#pw { 
+   background-position: 10px -43px;
+}
+</style>
+</head>
+<body>
+<form name="form1">
+   <fieldset>
+      <legend>로그인</legend>
+      <input type="text" name="user_id" id="id" />
+      <input type="password" name="user_pw" id="pw" />
+   </fieldset>
+</form>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#id, #pw').focus(function(){ //포커스 이벤트
+		$(this).css('background-image', 'none'); //$(this) 사용자가 선택한 값
+	});
+	
+	$('#id, #pw').blur(function(){ //포커스 해제 이벤트
+		if($(this).val()){ //사용자가 선택한 값이 있으면
+			$(this).css('background-image', 'none');			
+		}else {
+			$(this).css('background-image', 'url(../img/input.png)');
+		}
+	}); 
+});
+</script>
+</body>
+</html>

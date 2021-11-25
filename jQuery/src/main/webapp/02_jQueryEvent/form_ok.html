@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/event.css">
+</head>
+<body>
+<form name="form1">
+   <div id="input">
+      <h2>저장되었습니다.</h2>
+      <input type="button" id="backBtn" value="이전페이지로 이동" class="myButton"/>
+   </div>
+</form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$('#backBtn').click(function(){
+	history.back(); //단순한 페이지 이동, 데이터가 남아있음
+	//history.go(-1);
+	
+	//location.href='exam10.html'; //새로고침이 됨, 데이터가 사라짐
+});
+</script>
+</body>
+</html>

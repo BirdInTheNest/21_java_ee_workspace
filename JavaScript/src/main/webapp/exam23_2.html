@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function open1(){
+		//새 창 열기
+		window.open("open.html");
+	}
+	
+	function open2(){
+		//팝업 창 열기
+		window.open("open.html", 
+				"", //타겟명을 주면 창이 한번에 하나만 열리고, 여러개 만들어지지 않음.
+				"width=300, height=500, scrollbars=no, toolbar=no, menubar=no, status=no, location=no");
+	}
+	
+	function open3(url){
+		window.open(url, 
+				"myWindow", //타겟 이름은 하나만 설정하겠다
+				"width=300, height=500, scrollbars=no, toolbar=no, menubar=no, status=no, location=no");
+	}
+</script>
+</head>
+<body>
+	<h1>window 객체</h1>
+	<h3>open 메소드 확인</h3>
+	<div>
+		<a href="#" onclick="open1(); return false;">새 창 열기</a>
+		<br>
+		<a href="#" onclick="open2(); return false;">팝업 창 열기(1)</a>
+		<br>
+		<a href="#" onclick="open3('https://www.naver.com'); return false;">
+		팝업 창 열기(2-1)</a>
+		<br>
+		<a href="#" onclick="open3('https://www.daum.net'); return false;">
+		팝업 창 열기(2-2)</a>
+		<br>
+	</div>
+</body>
+</html>

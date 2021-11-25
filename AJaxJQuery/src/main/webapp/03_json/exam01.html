@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+</head>
+<body>
+<h1 class="title">$.ajax() 함수를 사용한 JSON데이터 읽기 (1)</h1>
+<div class="exec">
+   <input type="button" value="JSON데이터 가져오기" id="mybtn" />
+</div>
+
+<div class="console" id="result"></div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$('#mybtn').click(function(){
+	$.ajax({
+		url: '../json/json01.json',
+		type: 'get',
+		dataType: 'json',
+		success: function(data){
+			//alert(JSON.stringify(data));
+			
+			var title = data.school.subject.title;
+			var time = data.school.subject.time;
+			var teacher = data.school.subject.teacher;
+			
+			var ul = $('<ul>');
+			var li1 = $('<li>').html(title);
+			var li2 = $('<li>').html(time);
+			var li3 = $('<li>').html(teacher);
+			
+			$('#result').append(ul.append(li1).append(li2).append(li3));
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+});
+</script>
+</body>
+</html>
+
+<!-- 
+* JSON 파일 로딩
+XML 데이터는 JSON에 비해 전송되는 텍스트의 양이 많기 때문에 통신량의 소모가 큰 단점이 있습니다.
+이런 단점을 보완하기 위해서, Ajax에서의 응답 결과를 JSON 형식으로 사용하기도 합니다.
+JSON은 javascript에서의 기본 데이터 표현기법이므로, XML과 같이 요소를 탐색해야 하는 번거로움이 줄어듭니다.
+ -->

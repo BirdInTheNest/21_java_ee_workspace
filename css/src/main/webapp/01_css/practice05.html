@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	background-color: powderblue;
+}
+h3, em {
+	color: green;
+}
+div strong { /* div의 후손 strong 태그에 빨간색 부여: 박인희, 꽃 */
+	color: red;
+}
+div > strong {
+	color: blue; /* div의 자식 태그에 파란색 부여: 박인희, 새로운 값으로 덮어버림 */
+}
+#center {
+	text-align: center;
+}
+#center strong {
+	background-color: yellow;
+}
+.indent {
+	text-indent: 3em;
+}
+</style>
+</head>
+<body class="main">
+	<h3>얼굴</h3>
+	<hr>
+	<div id="center"><strong>박인희</strong></div>
+	<div class="indent">
+		<p><em>길</em>을 걷고 산들 무엇하리 
+		<strong>꽃</strong>이 내가 아니듯 
+		내가 <strong>꽃</strong>이
+		될 수 없는 지금...</p>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

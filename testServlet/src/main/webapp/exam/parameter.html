@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	font-size: 8pt;
+	color: red;
+	font-weight: bold;
+}
+</style>
+<script type="text/javascript">
+function goParam(){
+	/* 
+	//if(현재문서.id속성)
+	if(document.getElementById("name").length == 0) 
+		alert("이름을 입력하세요");
+	else if(document.getElementById("age").value == "")
+		alert("나이를 입력하세요");
+	else
+		document.paramForm.submit(); */
+		
+	//초기화
+	document.getElementById("nameDiv").innerHTML = "";
+	document.getElementById("ageDiv").innerText = "";
+	
+	//if(현재문서.폼이름.name속성)
+	if(document.paramForm.name.value == "") 
+		//alert("이름을 입력하세요");
+		document.getElementById("nameDiv").innerHTML = "이름을 입력하세요";
+	else if(document.paramForm.age.value == "")
+		//alert("나이를 입력하세요");
+		document.getElementById("ageDiv").innerHTML = "나이를 입력하세요";
+	else
+		document.paramForm.submit();
+}
+</script>
+</head>
+<body>
+<form name="paramForm" method="get" action="http://localhost:8080/testServlet/ParamServlet">
+	<table border="1" cellspacing="0" cellpadding="5">
+		<tr>
+			<td width="100" align="center">이름</td>
+			<td>
+				<input type="text" name="name" id="name" placeholder="이름 입력">
+				<div id="nameDiv"></div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td width="100" align="center">나이</td>
+			<td>
+				<input type="text" name="age" id="age" size="7" maxlength="3">
+				<div id="ageDiv"></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2" align="center">
+				<input type="button" value="보내기" onclick="goParam()">
+				<input type="reset" value="취소">
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
+
+<!-- 
+페이지 이동
+1. submit ~ action (<form> 태그 안에 있는 데이터를 가지고 이동)
+2. button ~ onclick
+3. sendRedirect(주소)
+4. forward
+
+[실행] 
+http://localhost:8080/testServlet/exam/parameter.html
+
+	↓ 요청
+
+http://localhost:8080/testServlet/ParamServlet?name=hong&age=25
+
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 

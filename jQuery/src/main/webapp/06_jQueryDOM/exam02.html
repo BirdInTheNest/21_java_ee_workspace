@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+   width: 480px;
+   height: 300px;
+   padding-top: 20px;
+   background-size: 100% 100%;
+}
+ul {
+   padding: 10px 20px;
+   background-color: rgba(255, 255, 255, 0.6); /* RGB A(투명도) */
+}
+</style>
+</head>
+<body>
+<div>
+   <ul id="menu">
+      <li class="item">
+         <a href="#">../img/1.gif</a>
+      </li>
+      <li class="item">
+         <a href="#">../img/2.gif</a>
+      </li>
+      <li class="item">
+         <a href="#">../img/3.gif</a>
+      </li>
+   </ul>
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.item > a').click(function(){
+		var index = $(this).parent().index();
+		console.log('index = ' + index);
+		
+		var image = ['../img/1.gif', '../img/2.gif', '../img/3.gif']; //배열
+		
+		$(this).parents('div').css({ //내가 선택한 객체의 가까운 조상 div
+			'background-image' : 'url(' + image[index] + ')'
+		});
+		
+		return false;
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="get" action="result.html">
+		<fieldset>
+			<legend>
+				이름입력하기
+			</legend>
+			<div>
+				<label for="user_name">이름: </label>
+				<input type="text" name="user_name" id="user_name" />
+			</div>
+			<div>
+				<input type="submit" value="입력완료" />
+				<input type="reset" value="다시작성" />
+				<input type="button" value="일반버튼" 
+					onclick="location.href='result.html'"/>
+				<input type="image" src="img/ok.png" alt="입력완료" />
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>
+
+<!-- 
+reset은 form안의 입력상자 등을 초기화 
+submit은 입력된 데이터를 가지고 페이지 이동, action="주소" 과 한 쌍
+타입에 이미지가 오면 자동으로 submit한다, 데이터 가져감
+
+submit ~ action
+- 입력된 데이터를 가지고 페이지 이동, 데이터를 가지고 가는 건 submit밖에 없음
+
+button ~ onclick
+- 페이지 이동, 데이터 가지고 가지 않음
+
+
+GET 방식은 디폴트, URL에 폼 데이터를 추가하여 서버로 전달하는 방식
+-->

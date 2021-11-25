@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="hello"></h1>
+
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+function hello($){ //jQuery 객체 $를 받아온다
+	var h1 = $('#hello'); //id가 hello인 태그를 얻어오기
+	h1.html("Hello jQuery!!");
+}
+
+jQuery(hello); //함수 호출
+</script>
+</body>
+</html>

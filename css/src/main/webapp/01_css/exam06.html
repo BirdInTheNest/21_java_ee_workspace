@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+1. 첫 번째 방법
+<link rel="stylesheet" href="../css/myStyle.css">
+
+2. 두 번째 방법
+ -->
+ <style type="text/css">
+ 	@import url(../css/myStyle.css);
+ </style>
+</head>
+<body>
+<h3>Champagne Supernova</h3>
+<hr>
+<p>How many special people change? 
+How many lives are livin' strange? 
+Where were you while we were getting high?</p>
+</body>
+</html>
+
+<!-- 
+* 스타일시트(CSS) 파일을 로드 하는 방법
+
+HTML 문서의 디자인을 담당할 스타일시트(CSS) 파일을 로드 하는 방법은 link 태그를 사용하는 방법과 @import 를 사용하는 방법 등 두 가지가 있다.
+
+1. 첫번째
+<link rel="stylesheet" type="text/css" href="css/style.css">
+link 태그는 기본적으로 외부에 있는 리소스를 가져오는 태그입니다. 
+head 섹션에 들어가 있어야 합니다.
+rel 을 stylesheet 로 지정하고 href 에 해당 CSS 파일의 절대주소 혹은 상대주소를 넣어주면 CSS 파일을 로드 할 수 있다.
+
+2. 두번째
+<style type="text/css">
+    @import url("css/style.css");
+</style>
+link 태그와 마찬가지로 head 섹션에 들어가 있어야 하며, head 섹션 내부에 style 태그를 만들고 그 안에서 @import 를 사용해야 한다.
+
+----------------------------------------------------------------
+
+<link rel="stylesheet" href="../css/myStyle.css">
+나가서, css 폴더에 있는 myStyle.css 파일 링크
+ -->

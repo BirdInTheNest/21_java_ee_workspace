@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	font-size: 8px;
+	color: red;
+}
+</style>
+<script type="text/javascript">
+	function goParam() {
+		//초기화
+		document.getElementById("xDiv").innerText = "";
+		document.getElementById("yDiv").innerText = "";
+
+		//if(현재문서.폼이름.name속성)
+		if (document.calcForm.x.value == "")
+			document.getElementById("xDiv").innerText = "x의 값을 입력";
+
+		else if (document.calcForm.y.value == "")
+			document.getElementById("yDiv").innerText = "y의 값을 입력";
+		else
+			document.calcForm.submit();
+	}
+</script>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+}
+
+#submit {
+	text-align: center;
+}
+
+td {
+	height: 30px;
+}
+</style>
+</head>
+<body>
+	<form name="calcForm" method="get"
+		action="http://localhost:8080/testServlet/CalcServlet">
+		<table border="1" cellspacing="0" cellpadding="5">
+			<tr>
+				<td width="50" align="center">X</td>
+				<td><input type="text" name="x" id="x">
+					<div id="xDiv"></div></td>
+			</tr>
+
+			<tr>
+				<td width="50" align="center">Y</td>
+				<td><input type="text" name="y" id="y">
+					<div id="yDiv"></div></td>
+			</tr>
+
+			<tr>
+				<td colspan="2" align="center"><input type="button" value="계산"
+					onclick="goParam()"> <input type="reset" value="취소">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

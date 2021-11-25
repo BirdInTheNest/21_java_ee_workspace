@@ -1,0 +1,60 @@
+@charset "UTF-8";
+@import url(common.css);
+
+#wrap {
+	width: 1000px;
+	margin: 0 auto; /* 가운데 정렬 */
+}
+#header h1 {
+	text-align: center;
+}
+#header {
+	margin-bottom: 50px;
+}
+#topnav li {
+	color: black;
+	text-decoration: none;
+	padding-right: 10px;
+	margin-right: 10px;
+	list-style: none;
+	float: left;
+}
+#topnav:hover {
+	text-decoration: underline;
+}
+#topnav:after {
+	clear: both;
+}
+#section {
+	margin-bottom: 50px;
+}
+#article p {
+	margin-bottom: 50px;
+}
+#article img {
+	margin: 0 auto;
+	width: 1000px;
+}
+#article:after {
+	margin-bottom: 20px;
+}
+#shopTeaNav li {
+	padding-right: 10px;
+	list-style: none;
+	float: left;
+}
+#shopTeaNav:after {
+	clear: both;
+}
+#wrap:after {
+	clear: both;
+}
+#footer {
+	margin: 0 auto;
+}
+#btnnav li {
+	padding-right: 10px;
+	list-style: none;
+	float: left;
+	margin: 20px;
+}

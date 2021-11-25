@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function doPrint(num){
+		var msg = "doPrint()가 " + num + "회 실행되었습니다.";
+		alert(msg);
+		document.getElementById("myid").innerHTML = msg;
+	}
+	
+	doPrint(1);
+</script>
+</head>
+<body>
+	<script type="text/javascript">
+		doPrint(2);
+	</script>
+	
+	<h1 id="myid">안녕하세요.</h1>
+	
+	<script type="text/javascript">
+		doPrint(3);
+	</script>
+</body>
+</html>
+
+<!-- 
+스파게티 소스 제약 조건
+: 제어하려는 태그가 인식된 이후에 자바스크립트 함수를 호출해야 한다
+  자바스크립트 소스와 HTML 태그가 반드시 순서를 지키면서 섞이도록 코딩해야 한다
+  
+---------------------------------------------------------
+물흐르듯이 프로그램 순서를 갖기 때문에 
+
+1. script가 head 영역에 있으면
+doPrint(1);과 doPrint(2);는 <h1 id="myid">를 모르기 때문에 에러가 난다.
+
+2. script가 body 영역에 있으면
+doPrint(2);와 doPrint(3);는 doPrint함수를 모르기 때문에 에러가 발생하고, doPrint(1);만 인식
+ -->

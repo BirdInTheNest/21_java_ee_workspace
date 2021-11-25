@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="main.css"><!-- CSS 파일 로드 -->
+</head>
+<body>
+<dl class="skip">
+	<dt class="blind">skip navigation</dt>
+	<dd><a href="#content">skip to content</a></dd>
+</dl> <!-- skip -->
+<hr>
+
+<div id="wrap">
+	<div id="header">
+		<h1 class="logo"><a href="#">LOGO</a></h1>
+		
+		<dl class="topnav">
+			<dt class="blind">top navigation</dt>
+			<dd><a href="#">Login</a></dd>
+			<dd><a href="#">Member Join</a></dd>
+			<dd><a href="#">Sitemap</a></dd>
+		</dl>
+		
+		<h2 class="blind">main navigation</h2>
+		<ul class="mainnav">
+			<li><a href="#">About</a></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Portfolio</a></li>
+			<li><a href="#">Contact us</a></li>
+		</ul>
+	</div> <!-- header -->
+	<hr>
+	
+	<div id="container">
+		<div class="snb">
+			<h2>About</h2>
+			<ul>
+				<li><a href=#">Company Info</a></li>
+				<li><a href=#">History</a></li>
+				<li><a href=#">Location</a></li>
+			</ul>
+		</div> <!-- snb -->
+		<hr>
+		
+		<div id="content">
+			<p class="locate">
+	            <a href="#">Home</a> &gt;
+	            <a href="#">About</a> &gt;
+	            <strong>Company Info</strong>
+	         </p>
+			
+			<h2>Company Info</h2>
+			<p class="thum">
+				<img src="../img/treethum.png" alt="tree thumnail photo">
+			</p>
+			
+			<div class="text">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, ea, impedit ut 
+				perspiciatis assumenda ipsam minus veritatis tenetur nisi commodi laboriosam 
+				quae sint nulla? Obcaecati, corrupti, placeat, quasi repudiandae deleniti quod 
+				aliquam facere vitae cumque sapiente sequi qui asperiores eos ipsum perferendis 
+				tenetur veritatis nesciunt dolores corporis sint nisi numquam excepturi dolor 
+				aspernatur natus provident et itaque quaerat saepe unde quo quidem odit sunt 
+				soluta animi incidunt beatae. Quod, amet recusandae earum iste debitis! Amet, 
+				expedita, aperiam, sint omnis fuga magnam eos quidem alias soluta nobis sunt 
+				unde incidunt! Ratione, autem eligendi molestiae saepe et numquam facilis 
+				pariatur voluptates ipsum!</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, velit illum 
+				omnis ipsam quibusdam blanditiis iusto obcaecati nihil ab in! Iure, natus, magni, 
+				similique aut laudantium omnis a non quisquam aliquid numquam libero pariatur 
+				ipsa optio doloribus temporibus impedit ratione quam. Deserunt, quisquam, ad, 
+				provident officiis nostrum praesentium blanditiis quidem sapiente voluptate 
+				asperiores eius rerum dignissimos minima consequatur voluptatum odio fuga 
+				soluta! In, odio eos numquam veniam odit ratione dolorum architecto sint. Qui, 
+				harum, eveniet recusandae vitae perferendis sunt dolores distinctio alias eius 
+				quibusdam maxime id sed velit iusto cupiditate excepturi facilis odio voluptatibus 
+				dignissimos quidem aperiam vel corporis iure nam laboriosam ratione perspiciatis. 
+				Ut, repellendus numquam aspernatur voluptatum doloremque blanditiis quis quam 
+				quisquam aperiam illo impedit similique accusamus at.</p>
+			</div> <!-- text -->
+		</div> <!-- content -->
+	</div> <!-- container -->
+</div> <!-- wrap --> 
+<hr>
+	
+<!-- wrap에서 footer을 빼야 본문 내용이 적어져도 footer가 딸려 올라가지 않음 -->
+<div id="footer">
+	<div class="footerArea">
+		<dl class="btmnav">
+			<dt class="blind">bottom navigation</dt>
+			<dd><a href="#">About</a></dd>
+			<dd><a href="#">Services</a></dd>
+			<dd><a href="#">Portfolio</a></dd>
+			<dd><a href="#">Contact us</a></dd>
+			<dd><a href="#">Location</a></dd>
+		</dl>
+		
+		<p class="copy">
+			Copyright &copy; COMPANY Design<br>
+			Powered by Webazit, e-mail : 
+			<a href="mailto:webmaster@company.com">webmaster@company.com</a>
+		</p>
+	</div><!-- footerArea -->
+</div> <!-- footer -->
+</body>
+</html>
+
+<!--
+dl – Description-List 
+dt – Description-Term
+dd - Description-Description
+HTML <dl> 요소는 설명 목록을 나타냅니다. 
+<dl>은 <dt>로 표기한 용어와 <dd> 요소로 표기한 설명 그룹의 목록을 감싸서 설명 목록을 생성합니다. 
+주로 용어사전 구현이나 메타데이터(키-값 쌍 목록)를 표시할 때 사용합니다.
+
+skip 기능 만들기 => 본문 바로가기
+스킵메뉴란 tab을 이용해서 마우스가 아닌 키보드로 화면을 제어하고 메뉴 버튼을 누를 수 있게 하는 기능이다.
+naver, daum 등 대표적인 사이트는 모두 적용이 되어있다.
+- html 문서에서 맨 앞에 지정했던 “본문 바로가기(skip)”의 표현을 작성
+- 화면에서 나타나지 않고 있다가 ":focus", 즉 "Tab"키를 눌렀을 때 등장한다.
+- 이때 "Enter"키를 눌러 본문으로 이동하거나, 클릭하여 이동할 수 있다.
+
+[본문 바로가기] || [메뉴 바로가기] || [하단정보 바로가기] 등의 Skip Navigation가 가장 많다.
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

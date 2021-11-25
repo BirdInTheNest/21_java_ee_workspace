@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function f(x,y) {
+		var z = x + y;
+		
+		if(z<10){
+			return; //함수를 벗어나라
+		}
+		
+		return z;
+	}
+	
+	let a = f(2,1);
+	let b = f(5,7);
+	let c = f(10,5);
+	
+	document.write("<h3>"+ a +"</h3>"); //undefined
+	document.write("<h3>"+ b +"</h3>"); 
+	document.write("<h3>"+ c +"</h3>"); 
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+<!-- 
+Ctrl z 뒤로 가기
+Ctrl y 앞으로 가기
+ -->

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){ //익명클래스
+		var fruit = document.getElementsByName("fruit"); //네임 속성을 가진 애들을 가져와라
+		//alert(fruit.length[0]); //체크
+		for(var i=0; i<fruit.length; i++){ 
+			//기본적으로 체크된 것을 찾는다
+			if(fruit[i].checked){
+				printImg(fruit[i].value);
+				break;
+			}
+		}//for
+		
+		//기본적으로 체크된 것이 없을 때 (처음)
+		if(i==fruit.length) //선택된 값이 없을 때
+			printImg("img/살랑살랑피치.gif")
+	}
+
+	function printImg(imgFile){
+		//alert(imgFile);
+		document.getElementById("show").src = imgFile; //id 속성을 가진 애를 가져와라
+	}
+</script>
+</head>
+<body>
+	<h3>라디오 버튼을 클릭하면 이미지를 출력합니다.</h3>
+	<hr/>
+	<form>
+		<input type="radio" name="fruit" value="img/banana.jpg" onclick="printImg(this.value)">바나나
+		<input type="radio" name="fruit" value="img/mango.jpg" onclick="printImg(this.value)">망고
+		<input type="radio" name="fruit" value="img/apple.jpg" onclick="printImg(this.value)">사과
+	</form>
+	<br/>
+	<img id="show" src="" width="150" height="150" alt="선택한 이미지">
+</body>
+</html>
+
+<!-- 
+.. 상위폴더
+
+this를 하면 내가 선택한 값을 가져온다. 
+ -->

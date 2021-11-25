@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userSQL">
+	<!-- 만약 오라클 컬럼명과 DTO 필드명이 서로 다를 때 -->
+	<resultMap type="user" id="userResult">
+		<result property="name" column="NAME" /><!-- 필드명, 컬럼명 -->
+		<result property="id" column="ID" />
+		<result property="pwd" column="PWD" />
+	</resultMap>
+
+	<insert id="write" parameterType="user">
+		insert into usertable values(#{name}, #{id}, #{pwd})
+	</insert>
+	
+	<!-- <select id="getUserList" resultType="user"> --><!-- resultType은 필드명, 컬럼명 같을 때 사용 -->
+	<select id="getUserList" resultMap="userResult"><!-- 1줄당 user.bean.UserDTO 담기, 자동으로 List에 담는다 -->
+		select * from usertable
+	</select>
+	
+	<select id="getUser" parameterType="String" resultType="user">
+		select * from usertable where id=#{id}
+	</select>
+	
+	<update id="update" parameterType="java.util.Map"><!-- parameterType 하나밖에 못 받음 -->
+		update usertable set name=#{name}, pwd=#{pwd} where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete usertable where id=#{id}
+	</delete>
+	
+	<select id="search" parameterType="java.util.Map" resultType="user"><!-- 1줄당 user.bean.UserDTO 담기, 자동으로 List에 담는다 -->
+		<!-- XML 문법 -->
+		<!-- 
+		select * from usertable where 
+		<if test="columnName=='name'">
+			name like '%' || #{value} || '%'
+		</if>
+		<if test="columnName=='id'">
+			id like '%' || #{value} || '%'
+		</if>
+		-->
+		 
+		<!-- 
+		select * from usertable where 
+		<choose>
+			<when test="columnName=='name'">
+				name like '%' || #{value} || '%'
+			</when>
+			<otherwise>
+				id like '%' || #{value} || '%'
+			</otherwise>
+		</choose>
+		 -->
+		  
+		<!-- ${ }: 상수, 변하지 않는 값 / #{ }: ? 리터럴 값 -->
+		select * from usertable where ${columnName} like '%' || #{value} || '%'
+		  
+	</select>
+</mapper>
+
+<!-- 
+다중 if문
+if(a==1) A;
+else if(a==2) B;
+else if(a==3) C;
+else D;
+
+
+JSTL 문법
+<c:choose>
+   <c:when test="${a==1}">A</c:when>
+   <c:when test="${a==2}">B</c:when>
+   <c:when test="${a==3}">C</c:when>
+   <c:otherwise>D</c:otherwise>
+</c:choose>
+ -->

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+</head>
+<body>
+<h1 class="title">$.ajax() 함수를 사용한 텍스트 읽기</h1>
+<div class="exec">
+   <input type="button" value="txt파일 가져오기" id="mybtn" />
+</div>
+<div class="console" id="result"></div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$('#mybtn').click(function(){
+	$.ajax({
+		url: '../text/textdata.jsp', //더블, 싱글 관계없음
+		type: 'get',
+		//data: 'keyword=' + 'Hello AJax!!', //변수=값, 서버로 보내는 데이터
+		data: {'keyword' : 'Hello AJax!!'}, //JSON 형식 {변수: 값}, 표기법만 달라짐
+		dataType: 'text', //서버로부터 받는 데이터 타입
+		success: function(data){ //위의 지정어 data와 같은 값이 아님, 아무 이름으로 해도 상관없음
+			//$('#result').text(data);
+			$('#result').html(data);
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+});
+</script>
+</body>
+</html>
+
+<!-- 
+http://localhost:8080/AJaxJQuery/text/textdata/jsp?keyword=Hello AJax!!
+URL에는 공백을 넣으면 안됩니다.
+ -->

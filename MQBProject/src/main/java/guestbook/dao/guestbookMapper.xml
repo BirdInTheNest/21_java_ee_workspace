@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="guestbookSQL">
+	<!-- 방명록 작성 -->
+	<insert id="guestbookWrite" parameterType="java.util.Map">
+		insert into guestbook(seq, name, email, subject, content, logtime) 
+		values(seq_guestbook.nextval
+				, #{name}
+				, #{email}
+				, #{subject}
+				, #{content}
+				, sysdate)
+	</insert>
+	<!-- 방명록 목록 -->
+	<select id="getGuestbookList" parameterType="java.util.Map" resultType="guestbook">
+		select * from
+		(select rownum rn, tt.* from
+		(select seq, name, email, subject, content, logtime 
+		from guestbook order by seq desc) tt
+		)where rn between #{startNum} and #{endNum}
+	</select>
+</mapper>

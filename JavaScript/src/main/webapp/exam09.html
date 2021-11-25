@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function sayHello(){ //정의, 구현
+		document.write("<h1>안녕하세요.</h1>");
+		document.write("<h1>자바스크립트</h1>");
+	}
+	
+	sayHello(); //호출
+	sayHello(); //호출
+
+</script>
+</head>
+<body>
+	<input type="button" value="함수 호출" onclick="sayHello()">
+</body>
+</html>
+
+<!-- 
+함수
+- 어떤 기능을 구현해놓은 명령어들의 집합
+- 함수의 사용방법은 "정의"와 "호출"의 두 부분으로 나뉜다.
+
+(1) 정의(구현)
+function 함수이름() {
+	명령문;
+}
+
+(2) 호출
+함수이름();
+-------------------------------------------------
+자바에서
+public void sayHello() { //구현
+
+}
+--------------------------------------	
+자바스크립트에서 
+function sayHello(){ //정의, 구현
+	
+}
+-------------------------------------------------	
+Script 안의 함수를 호출하려면 body 영역 안에서 이벤트 필요
+1. 버튼이 눌렸을 때 자바스크립트 함수를 호출한다
+2. body 영역을 읽었을 때
+-------------------------------------------------
+onclick 클릭할 때
+onchange 체크박스, 리스트 등 선택한 값이 변화할 때
+onload body영역을 읽을 때
+
+ -->

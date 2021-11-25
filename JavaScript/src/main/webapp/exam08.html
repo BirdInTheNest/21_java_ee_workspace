@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var sum = 0;
+	for(let i=1; i<=100; i++){ //let은 자바의 지역변수처럼 쓰이고, var은 전역변수처럼 쓰임
+		sum += i;
+	}
+	
+	//i를 let으로 선언하면 화면에는 아무것도 안 보인다. F12에서 확인 가능 error: i is not defined
+	document.write("i = "+i);
+	document.write("<h1>1부터 100까지의 합은 "+sum+"입니다.</h1>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

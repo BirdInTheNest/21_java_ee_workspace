@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+function hello(){
+	var h1 = document.getElementById("hello"); //id가 hello인 태그를 얻어오기
+	alert(h1); //[object HTMLHeadingElement]라는 객체명 출력
+	alert(h1.tagName); //H1 이라는 태그명을 출력
+	h1.innerHTML = "Hello jQuery!!";
+}
+//------------------
+/*
+//자바스크립트 문법
+window.onload = function(){ //윈도우가 실행되자마자 hello함수 호출 - 자바스크립트 이용
+	hello();
+}
+*/
+
+//위의 방법을 제이쿼리 이용하여 실습 javascript의 onload 이벤트와 같은 효과 발생
+jQuery(hello);
+
+</script>
+</head>
+<body>
+<h1 id="hello"></h1>
+</body>
+</html>
+
+<!-- 
+$()
+이름이 $인 함수입니다. $ 함수를 호출하는 것입니다.
+jQuery 라이브러리 내부를 보면 window.jQuery = window.$ = jQuery 로 동일한 코드입니다. 
+javascript의 onload 이벤트와 같은 효과가 발생합니다. 
+
+
+제이쿼리 관련된 것 처리할 것
+script에 src 참조 먼저 잡아줘야합니다. (절차식이기 때문)
+ -->

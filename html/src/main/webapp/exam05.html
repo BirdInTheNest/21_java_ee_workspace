@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>취미 선택하기</legend>
+			<div>
+				<!-- 체크박스 -->
+				<input type="checkbox" name="hobby" id="hobby1" value="축구" checked />
+				<label for="hobby1">축구</label>
+				<input type="checkbox" name="hobby" id="hobby2" value="농구" />
+				<label for="hobby2">농구</label>
+				<input type="checkbox" name="hobby" id="hobby3" value="야구" />
+				<label for="hobby3">야구</label>
+			</div>
+		</fieldset>
+		
+		<br />
+		
+		<filedset>
+			<legend>성별 선택하기</legend>
+			<div>
+				<!-- 라디오 버튼 -->
+				<input type="radio" name="gender" id="gender_m" value="M" checked />
+				<label for="gender_m">남자</label>
+				<input type="radio" name="gender" id="gender_f" value="F" />
+				<label for="gender_f">여자</label>
+			</div>
+		</filedset>
+	</form>
+</body>
+</html>
+
+<!--  
+서버에 넘어갈 때 name이라고 적혀져 있는 애들이 넘어간다. 
+아이디 속성은 서버타고 못 감, 대신 아이디 속성에 style 지정 가능
+네임 속성만 서버타고 간다, 이름은 네임값, 값은 밸류값이 넘어감
+-->

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<title>Insert title here</title>
+<style type="text/css">
+html { 
+   height: 100%;
+}
+body { 
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+#map { 
+   width: 100%;
+   height: 100%;
+}
+</style>
+
+<script type="text/javascript" 
+src="//dapi.kakao.com/v2/maps/sdk.js?appKey=13f41cddc6591289abb1d556a57d0f11">
+</script>
+
+<script type="text/javascript">
+window.onload=function(){
+   //지도의 중심좌표, 선릉역
+   var position = new daum.maps.LatLng(37.50513385191259, 127.0490213730146); 
+   var container = document.getElementById("map");
+   var options = {
+         center: position,
+         level: 3 //지도의 확대 레벨
+   }; 
+   var map = new daum.maps.Map(container, options); //지도 생성
+   var marker = new daum.maps.Marker({
+      position: position //지도 중심좌표에 마커를 생성
+   }); 
+   marker.setMap(map); //지도에 마커를 표시
+}
+</script>
+</head>
+<body>
+   <div id="map"></div>
+</body>
+</html>
+
+<!-- 
+Kakao Maps API 
+- 다양한 기능과 소스를 알려준다
+https://apis.map.kakao.com/web/sample/enableDisableZoomInOut/
+
+모바일 웹 meta 태그 설정
+meta viewport 태그는 애플이 아이폰, 아이패드 등 자사의 모바일 브라우저의 
+뷰포트(viewvport) 크기 조절을 위해 만들었다.
+
+meta viewport 태그는 W3C 명세에는 없지만,(따라서 표준이 아님) 
+iOS 장치(아이폰 운영체제 브라우저 safari)가 널리 사용됨에 따라 사실상 표준처럼 사용되고 있고, 
+다른 브라우저들(Opera, Android,  Mobile firefox(Fennec) 등)도 이 태그를 채택하게 됩니다.
+
+1. 뷰포트 선언
+   <meta name="viewport"
+2. 컨텐트 선언
+   content="width=device-width (디바이스 크기에 맞추겠다고 선언)
+            initial-scale=1.0 (초기 크기 스케일 설정)
+            minimum-scale=1.0 (최소 크기 설정 / 범위: 0~10.0)
+            maximum-scale=1.0 (최대 크기 설정 / 범위: 0~10.0)
+            user-scalable=no (사용자 기기 확대기능 사용 유/무 설정, yes/no)
+
+확대를 하려면 user-scalable=yes로 주면 되지만 
+만약 초기, 최소, 최대를 같은 값으로 해놨다면 user-scalable을 yes로 해도 확대가 되지 않는다.
+ -->

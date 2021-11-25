@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
+   margin: 0;
+   padding: 0;
+}
+
+header {
+	background: yellow;	
+}
+header h1 {
+	text-align: center;
+}
+
+nav {
+	background: orange;
+	float: left;
+	width: 200px;
+	height: 80%;
+}
+
+nav h2 {
+	padding: 15px 0;	
+}
+
+nav ul {
+	padding: 0 30px 0 30px;
+}
+
+nav:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+section {
+	background: skyblue;
+	height: 80%;
+}
+
+article {
+	padding: 15px 5px;
+}
+
+#sample {
+	text-align: center;
+	color: black;
+}
+
+#sample div {
+	display: inline-block;
+}
+
+footer {
+	background: plum;
+	height: 50px;
+}
+footer p {
+	padding-top: 25px;
+	font-weight: bold;	
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1>웹툰</h1><br>
+		<article>
+			<p>
+				웹툰(Webtoon)은 네이버, 다음 등의 각종 플랫폼 매체에서 연재(連載)되는 만화를 지칭하는, 한국에서 만들어진 단어이며 해외에서도 한국의 인터넷 만화를 지칭하는 고유명사화 되었다. 
+				어원은 World Wide Web(웹) + Cartoon(만화)으로서 용어 생성 당시에 한국에서는 다른 나라와는 다르게 애니메이션 만화나 만화책을 구분하지 않고 뭉뚱그려 cartoon이라고 불렀다. 그래서 comic보다 cartoon이 널리 알려져 있어서 이렇게 굳어졌다.
+			</p>
+		</article>
+	</header>
+	
+	<nav>
+		<h2>목차</h2>
+		<ul>
+			<li><a href="#box">더 복서</a></li>
+			<li><a href="#god">신의 탑</a></li>
+			<li><a href="#love">연애혁명</a></li>
+			<li><a href="#sample">샘플</a></li>
+		</ul>
+	</nav>
+	
+	<section>
+		<article>
+			<h2 id="box">더 복서</h2>
+			<p>날카로운 선화에 뚜렷하고 건조한 느낌의 작화가 특징이지만 액션 장면이 주는 박력이 무척 강렬하다. 
+			   또한 강렬한 액션 연출과 여러 기술 묘사 뒤에 강렬하고 화려하며 치열한 복서 세계의 어두운 일면도 폭넓게 묘사하고 있다.
+			   그리고 한 번도 복싱이나 싸움을 해본 적 없는 사람도 몰입하고 공감할 수 있을 정도의 수준급 심리 묘사가 일품.</p>
+		</article>
+		
+		<article>
+			<h2 id="god">신의 탑</h2>
+			<p>대한민국의 웹툰. 작가는 SIU. 자신의 모든 것이었던 소녀 라헬을 찾기 위해 광대한 세계 그 자체인 '탑'을 오르기 시작한 
+			   소년 스물다섯번째 밤의 이야기를 그리고 있다. 모험, 판타지, 배틀물, 집착물, 성장물, 연애물, 액션 등 상황마다 장르가 
+			   달라진다. 작가가 구상하고 있는 T.U.S라는 세계관의 일부에 속하며 탑이라는 독특한 공간을 배경으로 삼고 있다. 
+			   탑의 다음 층으로 가기 위해서는 각 층의 관리자가 내는 시험에 통과해야만 하며, '탑의 끝까지 오른 자는 원하는 것을 얻을 수 있다.'는 것이 기본 설정이다.</p>
+		</article>
+		
+		<article>
+			<h2 id="love">연애혁명</h2>
+			<p>대한민국의 로맨스, 개그 웹툰으로 작가는대한민국의 로맨스, 개그 웹툰으로 작가는 232. 이삼정보고등학교의 학생 공주영이 
+			   같은 학교 동갑내기인 왕자림에게 첫눈에 반해 고백하고 사귀면서 일어나는 사건들을 그리고 있다. 
+			   이삼정보고등학교의 학생 공주영이 같은 학교 동갑내기인 왕자림에게 첫눈에 반해 고백하고 사귀면서 일어나는 사건들을 그리고 있다.</p>
+		</article>
+		
+		<article>
+			<h2 id="sample">샘플</h2>
+			<div >
+				<p>웹툰 샘플</p>
+				<div id="1"><p>더 복서</p><img alt="더 복서" src="../img/img1.gif"></div>
+				<div id="1"><p>신의 탑</p><img alt="신의 탑" src="../img/img1.gif"></div>
+				<div id="1"><p>연애혁명</p><img alt="연애혁명" src="../img/img1.gif"></div>
+				
+			</div>
+		</article>
+	</section>
+	<footer>
+		<p>Copyright 2017 by 홍길동</p>
+	</footer>
+</body>
+</html>

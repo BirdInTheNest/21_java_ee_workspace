@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/event.css">
+</head>
+<body>
+<h1>전체 선택 기능 구현하기</h1>
+<form name="form1">
+   <fieldset>
+      <legend>취미</legend>
+      <p>
+         <input type="checkbox" id="all_check" value="Y" />
+         <label for="all_check">전체 선택</label><!-- input 태그 id속성과 label for속성이 같음 -->
+      </p>
+      <p>
+         <input type="checkbox" id="hobby1" class="hobby_check" value="축구" />
+         <label for="hobby1">축구</label>
+         <input type="checkbox" id="hobby2" class="hobby_check" value="농구" />
+         <label for="hobby2">농구</label>
+         <input type="checkbox" id="hobby3" class="hobby_check" value="야구" />
+         <label for="hobby3">야구</label>
+      </p>
+   </fieldset>
+</form>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){ //onload
+	$('#all_check').change(function(){
+		var is_check = $(this).is(':checked');
+		console.log('is_check = ' + is_check);
+	
+		//$('.hobby_check').attr('checked', is_check);
+		$('.hobby_check').prop('checked', is_check);
+	});
+});
+</script>
+</body>
+</html>
+
+<!-- 
+.attr() 사용해도 전세 선택/해제가 되지만, 전체 선택을 하고 일부 해제를 하게 되면
+그 값이 남아있게 되어 다시 전체 선택/해제하면 제대로 값이 나오지 않습니다.
+
+.prop() 사용하면 전세 선택 -> 일부 해제 -> 다시 전체 선택/해제해도 제대로 값이 나옵니다.   
+ -->

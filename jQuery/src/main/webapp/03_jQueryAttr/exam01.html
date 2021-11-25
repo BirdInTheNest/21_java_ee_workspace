@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<p><a href="#">Link</a></p>
+
+<input type="checkbox" name="" id="check" checked="checked">체크박스
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+document.write('<br><br>');
+document.write('attr = ' + $('a').attr('href')); //a태그에서 속성이 href인 값, 문자열 가져옴
+document.write('<br>');
+document.write('prop = ' + $('a').prop('href')); //a태그에서 프로퍼티가 href인 값, 속성값 가져옴
+document.write('<hr>');
+//-------------------------
+var check = $('#check');
+
+document.write('attr = ' + check.attr('checked')); //attr = checked, 있는 그대로의 글씨
+document.write('<br>');
+document.write('prop = ' + check.prop('checked')); //prop = true, 글씨가 의미하는 값
+
+</script>
+</body>
+</html>
+
+<!-- 
+attr() / prop()
+jQuery 1.6버전 이전에는 attr() 하나로 많은 것을 처리하려다 보니 버그 및 문제가 발생하여 
+1.6 업데이트를 통해 attr()과 prop() 으로 나누어 불완전을 해소하였습니다.
+
+1. attr()
+HTML에 작성된 속성값을 문자열로 받아옵니다.
+
+[형식]
+var 변수명 = $("요소").attr("속성이름"); //값을 꺼내는 것, 문자열로 꺼냄
+$("요소").attr("속성이름", "값"); //값을 주는 것, (변수명, 값)
+
+$("요소").attr({ //여러 개의 값을 주는 것
+      "속성1이름": "값",
+      "속성2이름": "값",
+      "속성3이름": "값"
+});
+
+2. prop()
+지정한 선택자를 가진 첫번째 요소의 속성값을 가져오거나 속성값을 추가합니다.
+자바스크립트의 프로퍼티를 가져옵니다.
+주의할 점은 HTML 입장에서의 속성(attribute)이 아닌 JavaScript 입장에서의 속성(property)이라는 것입니다.
+자바스크립트의 프로퍼티 값이 넘어오기 때문에 boolean, date, function 등도 가져올 수 있습니다.
+
+[형식]
+.prop("속성이름")        → 속성값을 가져옵니다.
+.prop("속성이름", "값")   → 속성값을 추가합니다. 
+
+-------------------------------
+JSP에서
+<%
+String name = "홍길동";
+%>
+
+name //있는 그대로의 글씨 자체가 나옵니다.
+<%=name%> //name가 의미하는 값이 나옵니다.
+
+
+JSTL에서
+<c:set var="name">홍길동</c:set>
+
+name //있는 그대로의 글씨 자체가 나옵니다.
+${name} //name가 의미하는 값이 나옵니다.
+ -->
